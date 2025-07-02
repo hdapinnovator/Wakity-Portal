@@ -62,17 +62,17 @@ const Reports = () => {
 
 
     useEffect(() => {
-        getCr()
-            .then(res => {
-                const resdata = res.docs.map(doc => {
-                    const id = doc.id
-                    const data = doc.data()
-                    return { id, ...data }
-                })
+        // getCr()
+        //     .then(res => {
+        //         const resdata = res.docs.map(doc => {
+        //             const id = doc.id
+        //             const data = doc.data()
+        //             return { id, ...data }
+        //         })
 
-                setCells(resdata)
-                setFiltered(resdata)
-            })
+        //         setCells(resdata)
+        //         setFiltered(resdata)
+        //     })
     }, [deleted])
 
     return (

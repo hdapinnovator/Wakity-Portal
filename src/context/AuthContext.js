@@ -32,8 +32,12 @@ export const AuthContextProvider = ({ children }) => {
         const unsub = onAuthStateChanged(auth, async (user) => {
             seteUser(user)
 
-            const data = (await getDoc(doc(database, `users/${user.uid}`))).data()
-            if (data) setUserData(data)
+            
+            if (user) {
+                const data = (await getDoc(doc(database, `users/${user.uid}`))).data()
+                if (data) setUserData(data)
+            }
+
         })
     }, [])
 
